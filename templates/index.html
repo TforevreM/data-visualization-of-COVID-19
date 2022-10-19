@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>疫情实时监控</title>
+    <link rel="icon" href="../static/images/web.ico">
+    <link rel="stylesheet" href="../static/css/index.css"/>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js"></script>
+</head>
+<body>
+<div id="title"></div>
+<script src="../static/js/awsomeTitle.js"></script>
+<div id="time"></div>
+<!--累计-确诊，凝似，治愈，死亡-->
+<div id="left-1"></div>
+<div id="left-2">我是左二</div>
+<!--新增-确诊，凝似，治愈，死亡-->
+<div id="middle-1">
+    <div class="num">
+        <p id="confirm"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></p>
+    </div>
+    <div class="num">
+        <p id="nowConfirm"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></p>
+    </div>
+    <div class="num">
+        <p id="heal"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></p>
+    </div>
+    <div class="num">
+        <p id="dead"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></p>
+    </div>
+
+    <div class="txt">
+        <p>累计确诊</p>
+    </div>
+    <div class="txt">
+        <p>现有确诊</p>
+    </div>
+    <div class="txt">
+        <p>累计治愈</p>
+    </div>
+    <div class="txt">
+        <p>累计死亡</p>
+    </div>
+</div>
+<script src="../static/js/chinaTotal.js"></script>
+<!-- 放置中国地图-echarts-->
+<div id="middle-2"></div>
+<script src="../static/js/chinaAll.js"></script>
+<!--新增本土与新增境外输入趋势-->
+<div id="right-1">新增本土与新增境外输入趋势</div>
+<div id="right-2">
+</div>
+<script src="../static/js/topAddCountry.js"></script>
+<script>
+    // 更新时间
+    function getTime() {
+        $.ajax({
+            url: "/time",
+            success: function (data) {
+                $("#time").html(data);
+            },
+            error: function (data) {
+                console.log("获取时间出错");
+            }
+        })
+    }
+
+    getTime();
+    setInterval(getTime, 1000);  //每隔1秒执行一次
+</script>
+<script src="../static/js/baidu.js"></script>
+</body>
+</html>

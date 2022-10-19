@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>疫情报告</title>
+    <link rel="icon" href="../static/images/web.ico">
+    <link rel="stylesheet" href="../static/css/area.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js"></script>
+</head>
+<body>
+<div id="intro">
+    <p><span id="area">{{ name }}</span>疫情实时动态</p>
+</div>
+<!--累计-->
+<div id="sum"></div>
+<!--新增-->
+<div id="extend"></div>
+<script src="../static/js/area.js"></script>
+</body>
+</html>

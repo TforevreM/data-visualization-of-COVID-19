@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    background-color: #333;
+    color: whitesmoke;
+}
+
+#title {
+    position: absolute;
+    width: 40%;
+    height: 10%;
+    top: 0;
+    left: 30%;
+    font-size: 45px;
+    /*居中*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#time {
+    position: absolute;
+    width: 30%;
+    height: 10%;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#left-1 {
+    background-color: whitesmoke;
+    position: absolute;
+    width: 30%;
+    height: 45%;
+    top: 10%;
+    left: 0;
+}
+
+#left-2 {
+    background-color: whitesmoke;
+    position: absolute;
+    width: 30%;
+    height: 45%;
+    top: 55%;
+    left: 0;
+}
+
+#middle-1 {
+    position: absolute;
+    width: 40%;
+    height: 30%;
+    top: 10%;
+    left: 30%;
+}
+
+.num {
+    width: 25%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gold;
+    font-size: 35px ;
+}
+
+.txt {
+    width: 25%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+#middle-2 {
+    background-color: whitesmoke;
+    position: absolute;
+    width: 40%;
+    height: 60%;
+    top: 40%;
+    left: 30%;
+}
+
+#right-1 {
+    background-color: whitesmoke;
+    position: absolute;
+    width: 30%;
+    height: 45%;
+    top: 10%;
+    right: 0;
+}
+
+#right-2 {
+    background-color: whitesmoke;
+    position: absolute;
+    width: 30%;
+    height: 45%;
+    top: 55%;
+    right: 0;
+    overflow: hidden;
+    /*overflow-y: scroll;*/
+}
+
+#right-2 p {
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #333333;
+}
+
+#right-2 #liveBroad {
+    list-style: none;
+    margin-top: 30px;
+}
+
+#right-2 #liveBroad a{
+    text-decoration: none;
+    color: orange;
+    font-size: 15px;
+}
+#right-2 #liveBroad span {
+    color: #666666;
+}
+
+#right-2 #liveBroad a:hover {
+    color: red;
+}
