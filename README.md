@@ -17,11 +17,11 @@
   获取国内新冠疫情累计趋势，新增趋势，国内新增和境外输入趋势和新增确诊国家数据。
 - [实时更新：新冠肺炎疫情最新动态](https://news.qq.com/zt2020/page/feiyan.htm#/)
   获取国内累计确诊，现有确诊，累计治愈和累计死亡病例数据。
-- [DataV.GeoAtlas地理小工具系列](datav.aliyun.com/tools/atlas)
+- [DataV.GeoAtlas地理小工具系列](https://datav.aliyun.com/tools/atlas)
   获取全国各省市区县的JSON格式的地图数据。
   
  ## 可视化
- 本项目可视化部分，采用了基于 JavaScript 的开源可视化图表库ECharts([官网](echarts.apache.org),[Github](https://github.com/apache/echarts))来制作的。
+ 本项目可视化部分，采用了基于 JavaScript 的开源可视化图表库ECharts([官网](https://echarts.apache.org),[Github](https://github.com/apache/echarts))来制作的。
  
  ## 运行
  将项目克隆到本地以后，在终端运行以下命令来安装所需的python第三方包。
@@ -45,6 +45,6 @@
  Flask框架，运行默认端口是5000，运行之前请确保5000端口不被占用，或者修改`app.py`文件最后一行为
  ```
  if __name__ == "__main__":
-   app.run(debug=True, port=XXXX) # XXX 为自己指定的端口号
+     app.run(debug=True, port=XXXX) # XXX 为自己指定的端口号
  ```
  
