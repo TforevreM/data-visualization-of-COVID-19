@@ -43,8 +43,8 @@
  
  **注意**
  Flask框架，运行默认端口是5000，运行之前请确保5000端口不被占用，或者修改`app.py`文件最后一行为
- ```
+ ```python
  if __name__ == "__main__":
-     app.run(debug=True, port=XXXX) # XXX 为自己指定的端口号
+     app.run(debug=True, port=XXXX) # XXXX 为自己指定的端口号
  ```
  
