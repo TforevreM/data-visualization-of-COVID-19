@@ -56,19 +56,31 @@
 <script>
     // 更新时间
     function getTime() {
-        $.ajax({
-            url: "/time",
-            success: function (data) {
-                $("#time").html(data);
-            },
-            error: function (data) {
-                console.log("获取时间出错");
-            }
-        })
+        const sseUri = "http://" + document.location.host + "/time";
+        const sse = new EventSource(sseUri);
+        const timeNode = document.getElementById("time");
+
+        // 注册事件
+        sse.addEventListener("open", handleOpen,false);
+        sse.addEventListener("error", handleError,false);
+        sse.addEventListener("message", handleMessage,false);
+
+        function handleOpen() {
+            console.log("Connected to " + sseUri);
+        }
+
+        function handleError(e) {
+            console.log(e);
+        }
+
+
+        function handleMessage(e) {
+            //console.log(e.data);
+            timeNode.innerText = e.data;
+        }
     }
 
     getTime();
-    setInterval(getTime, 1000);  //每隔1秒执行一次
 </script>
 <script src="../static/js/baidu.js"></script>
 </body>

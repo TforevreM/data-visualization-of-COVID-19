@@ -1,8 +1,10 @@
-from flask import Flask, render_template
+from time import sleep
+from flask import Flask, render_template, Response
 from utils.getData import *
 from utils.getTime import *
 
 app = Flask(__name__)
+app.config["SECRET_KEY"] = "hard to guess!!!"
 
 
 @app.route('/')
@@ -11,8 +13,13 @@ def hello_world():  # put application's code here
 
 
 @app.route("/time")
-def return_time():
-    return get_server_time()
+def time_stream():
+    def event_stream():
+        while True:
+            sleep(1)
+            yield f"data:{get_server_time()}\n\n"
+
+    return Response(event_stream(), mimetype="text/event-stream")
 
 
 @app.route("/chinaTotal")
